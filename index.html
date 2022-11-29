@@ -36,10 +36,10 @@
 
     const btnPrev = document.getElementById('btnPrev');
     const btnNext = document.getElementById('btnNext');
-
-    let i = 3;
-
+    const detail = document.querySelector('details');
     const options = document.querySelectorAll('.option');
+    
+    let i = 0;
 
     options.forEach((op) => op.addEventListener('click', (e) => {
         let ans = e.target.innerHTML;
@@ -87,6 +87,7 @@
         setQuestion('exp', obj.exp)
         setQuestion('qindex', obj.id);
         clearbackgroundEffect();
+        detail.removeAttribute("open");
     }
 
     function setQuestion(id, text){
